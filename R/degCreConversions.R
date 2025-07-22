@@ -24,9 +24,9 @@
 #' data(DexNR3C1)
 #' 
 #' subDegGR <-
-#'  DexNR3C1$DegGR[which(GenomeInfoDb::seqnames(DexNR3C1$DegGR)=="chr1")]
+#'  DexNR3C1$DegGR[which(Seqinfo::seqnames(DexNR3C1$DegGR)=="chr1")]
 #' subCreGR <-
-#'  DexNR3C1$CreGR[which(GenomeInfoDb::seqnames(DexNR3C1$CreGR)=="chr1")]
+#'  DexNR3C1$CreGR[which(Seqinfo::seqnames(DexNR3C1$CreGR)=="chr1")]
 #'
 #' #Generate DegCre results.
 #' degCreResListDexNR3C1 <- runDegCre(DegGR=subDegGR,
@@ -118,9 +118,9 @@ calcRawAssocProbOR <- function(degCreResList){
 #' data(DexNR3C1)
 #' 
 #' subDegGR <-
-#'  DexNR3C1$DegGR[which(GenomeInfoDb::seqnames(DexNR3C1$DegGR)=="chr1")]
+#'  DexNR3C1$DegGR[which(Seqinfo::seqnames(DexNR3C1$DegGR)=="chr1")]
 #' subCreGR <-
-#'  DexNR3C1$CreGR[which(GenomeInfoDb::seqnames(DexNR3C1$CreGR)=="chr1")]
+#'  DexNR3C1$CreGR[which(Seqinfo::seqnames(DexNR3C1$CreGR)=="chr1")]
 #'
 #' #Generate DegCre results.
 #' degCreResListDexNR3C1 <- runDegCre(DegGR=subDegGR,
@@ -215,9 +215,9 @@ convertdegCreResListToGInteraction <- function(degCreResList,
 #' data(DexNR3C1)
 #' 
 #' subDegGR <-
-#'  DexNR3C1$DegGR[which(GenomeInfoDb::seqnames(DexNR3C1$DegGR)=="chr1")]
+#'  DexNR3C1$DegGR[which(Seqinfo::seqnames(DexNR3C1$DegGR)=="chr1")]
 #' subCreGR <-
-#'  DexNR3C1$CreGR[which(GenomeInfoDb::seqnames(DexNR3C1$CreGR)=="chr1")]
+#'  DexNR3C1$CreGR[which(Seqinfo::seqnames(DexNR3C1$CreGR)=="chr1")]
 #'
 #' #Generate DegCre results.
 #' degCreResListDexNR3C1 <- runDegCre(DegGR=subDegGR,

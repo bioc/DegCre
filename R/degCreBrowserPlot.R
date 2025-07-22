@@ -98,9 +98,9 @@
 #' data(DexNR3C1)
 #' 
 #' subDegGR <-
-#'  DexNR3C1$DegGR[which(GenomeInfoDb::seqnames(DexNR3C1$DegGR)=="chr1")]
+#'  DexNR3C1$DegGR[which(Seqinfo::seqnames(DexNR3C1$DegGR)=="chr1")]
 #' subCreGR <-
-#'  DexNR3C1$CreGR[which(GenomeInfoDb::seqnames(DexNR3C1$CreGR)=="chr1")]
+#'  DexNR3C1$CreGR[which(Seqinfo::seqnames(DexNR3C1$CreGR)=="chr1")]
 #'
 #' #Generate DegCre results.
 #' degCreResListDexNR3C1 <- runDegCre(DegGR=subDegGR,
@@ -225,7 +225,7 @@ plotBrowserDegCre <- function(degCreResList,
   #pad plotRegionGR by browserWinPad
   plotRegionGR <- plotRegionGR + browserWinPad
 
-  plotChrX <- as.character(GenomeInfoDb::seqnames(plotRegionGR))[1]
+  plotChrX <- as.character(Seqinfo::seqnames(plotRegionGR))[1]
   plotStartX <- IRanges::start(plotRegionGR)[1]
   plotEndX <- IRanges::end(plotRegionGR)[1]
 
