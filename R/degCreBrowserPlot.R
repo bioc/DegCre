@@ -297,6 +297,21 @@ plotBrowserDegCre <- function(degCreResList,
     assocProb = GInterX$assocProb
   )
 
+  # plotgardener's read_pairedData() swaps out-of-order anchor pairs by
+  # cbind-ing data[,-c(1:6)], which silently drops to a vector (losing the
+  # "assocProb" colname) when there's only one metadata column. Pre-sort
+  # anchors here so plotgardener never needs to swap.
+  needsSwap <- (GInterX_df$start2 < GInterX_df$start1) |
+    (GInterX_df$start2 == GInterX_df$start1 & GInterX_df$end2 < GInterX_df$end1)
+
+  if(any(needsSwap)){
+    swapped <- GInterX_df[needsSwap,
+      c("chrom2","start2","end2","chrom1","start1","end1")]
+    colnames(swapped) <- c("chrom1","start1","end1","chrom2","start2","end2")
+    GInterX_df[needsSwap,
+      c("chrom1","start1","end1","chrom2","start2","end2")] <- swapped
+  }
+
   assocArchesPlot <- plotgardener::plotPairsArches(data = GInterX_df,
     chrom= plotChrX,
     chromstart= plotStartX,
